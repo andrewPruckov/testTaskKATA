@@ -39,9 +39,94 @@ public class Main {
         int numOfArabN = 0;
         int numOfRomanN = 0;
         if (input.contains("+") == true){
-
             String num1 = input.substring(0,input.lastIndexOf("+"));
-            String num2;
+            String num2 = input.substring((input.lastIndexOf("+") + 1), input.length());
+            if (arabNum.containsKey(num1) && arabNum.containsKey(num2)){
+               int num1I = Integer.parseInt(num1);
+               int num2I = Integer.parseInt(num2);
+               System.out.println(num1I + num2I);
+            }
+            if (romNum.containsKey(num1) && romNum.containsKey(num2)){
+                int num1I = romNum.get(num1);
+                int num2I = romNum.get(num2);
+                System.out.println(convertNumToRoman(num1I + num2I));
+            }
         }
+        if (input.contains("-") == true){
+            String num1 = input.substring(0,input.lastIndexOf("-"));
+            String num2 = input.substring((input.lastIndexOf("-") + 1), input.length());
+            if (arabNum.containsKey(num1) && arabNum.containsKey(num2)){
+                int num1I = Integer.parseInt(num1);
+                int num2I = Integer.parseInt(num2);
+                System.out.println(num1I - num2I);
+            }
+            if (romNum.containsKey(num1) && romNum.containsKey(num2)){
+                int num1I = romNum.get(num1);
+                int num2I = romNum.get(num2);
+                if (num2I>num1I){
+                    System.out.println("throws Exception //т.к. в римской системе нет отрицательных чисел");
+                }
+                else {
+                    System.out.println(convertNumToRoman(num1I - num2I));
+                }
+            }
+        }
+        if (input.contains("/") == true){
+            String num1 = input.substring(0,input.lastIndexOf("/"));
+            String num2 = input.substring((input.lastIndexOf("/") + 1), input.length());
+            if (arabNum.containsKey(num1) && arabNum.containsKey(num2)){
+                int num1I = Integer.parseInt(num1);
+                int num2I = Integer.parseInt(num2);
+                if (num2I == 0){
+                    System.out.println("throws Exception //т.к. на ноль делить нельзя");
+                }
+                else {
+                    System.out.println((num1I / num2I));
+                }
+            }
+            if (romNum.containsKey(num1) && romNum.containsKey(num2)){
+                int num1I = romNum.get(num1);
+                int num2I = romNum.get(num2);
+                if (num2I == 0){
+                    System.out.println("throws Exception //т.к. на ноль делить нельзя");
+                }
+                else {
+                    System.out.println(convertNumToRoman(num1I / num2I));
+                }
+            }
+
+        }
+        if (input.contains("*") == true){
+            String num1 = input.substring(0,input.lastIndexOf("*"));
+            String num2 = input.substring((input.lastIndexOf("*") + 1), input.length());
+            if (arabNum.containsKey(num1) && arabNum.containsKey(num2)){
+                int num1I = Integer.parseInt(num1);
+                int num2I = Integer.parseInt(num2);
+                System.out.println(num1I * num2I);
+            }
+            if (romNum.containsKey(num1) && romNum.containsKey(num2)){
+                int num1I = romNum.get(num1);
+                int num2I = romNum.get(num2);
+                if (num1I < 0 || num2I < 0){
+                    System.out.println("throws Exception //т.к. в римской системе нет отрицательных чисел");
+                }
+                else {
+                    System.out.println(convertNumToRoman(num1I * num2I));
+                }
+            }
+        }
+        return null;
+    }
+    public static String convertNumToRoman (int numArab) {
+        String[] roman = {"null", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII",
+                "XVIII", "XIX", "XX", "XXI", "XXII", "XXIII", "XXIV", "XXV", "XXVI", "XXVII", "XXVIII", "XXIX", "XXX", "XXXI", "XXXII", "XXXIII",
+                "XXXIV", "XXXV", "XXXVI", "XXXVII", "XXXVIII", "XXXIX", "XL", "XLI", "XLII", "XLIII", "XLIV", "XLV", "XLVI", "XLVII", "XLVIII",
+                "XLIX", "L", "LI", "LII", "LIII", "LIV", "LV", "LVI", "LVII", "LVIII", "LIX", "LX", "LXI", "LXII", "LXIII", "LXIV", "LXV", "LXVI",
+                "LXVII", "LXVIII", "LXIX", "LXX", "LXXI", "LXXII", "LXXIII", "LXXIV", "LXXV", "LXXVI", "LXXVII", "LXXVIII", "LXXIX", "LXXX",
+                "LXXXI", "LXXXII", "LXXXIII", "LXXXIV", "LXXXV", "LXXXVI", "LXXXVII", "LXXXVIII", "LXXXIX", "XC",
+                "XCI", "XCII", "XCIII", "XCIV", "XCV", "XCVI", "XCVII", "XCVIII", "XCIX", "C"
+        };
+        String s = roman[numArab];
+        return s;
     }
 }
