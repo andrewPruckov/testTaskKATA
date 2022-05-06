@@ -46,29 +46,37 @@ public class Main {
         int divOperation2 = input.lastIndexOf("/");
         int mulOperation1 = input.indexOf("*");
         int mulOperation2 = input.lastIndexOf("*");
-        if (addOperation1 == subOperation1|| addOperation1 == divOperation1|| addOperation1 == mulOperation1){
-            throw new Exception("throws Exception //т.к. строка не является математической операцией");
+        System.out.println(addOperation1);
+        System.out.println(addOperation2);
+        System.out.println(subOperation1);
+        System.out.println(subOperation2);
+        System.out.println(divOperation1);
+        System.out.println(divOperation2);
+        System.out.println(mulOperation1);
+        System.out.println(mulOperation2);
+        if (addOperation1 == -1 && subOperation1 == -1 && divOperation1 == -1 && mulOperation1 == -1){
+            throw new Exception("throws Exception //т.к. строка не является математической операцией1");
         }
         if (addOperation1 != addOperation2 || subOperation1 != subOperation2 || divOperation1 != divOperation2 || mulOperation1 != mulOperation2){
-            throw new Exception("throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
+            throw new Exception("throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)1");
         }
-        if (addOperation1 == addOperation2 && subOperation1 > 0 || divOperation1 > 0 || mulOperation1 > 0){
-            throw new Exception("throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
+        if ( addOperation1 > 0 && addOperation1 == addOperation2 && (subOperation1 > 0 || divOperation1 > 0 || mulOperation1 > 0)){
+            throw new Exception("throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)2");
         }
-        if (subOperation1 == subOperation2 && addOperation1 > 0 || divOperation1 > 0 || mulOperation1 > 0){
-            throw new Exception("throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
+        if (subOperation1 > 0 && subOperation1 == subOperation2 && (addOperation1 > 0 || divOperation1 > 0 || mulOperation1 > 0)){
+            throw new Exception("throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)3");
         }
-        if (divOperation1 == divOperation2 && addOperation1 > 0 || subOperation1 > 0 || mulOperation1 > 0){
-            throw new Exception("throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
+        if (divOperation1 > 0 && divOperation1 == divOperation2 && (addOperation1 > 0 || subOperation1 > 0 || mulOperation1 > 0)){
+            throw new Exception("throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)4");
         }
-        if (mulOperation1 == mulOperation2 && addOperation1 > 0 || subOperation1 > 0 || divOperation1 > 0){
-            throw new Exception("throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
+        if (mulOperation1 > 0 && mulOperation1 == mulOperation2 && (addOperation1 > 0 || subOperation1 > 0 || divOperation1 > 0)){
+            throw new Exception("throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)5");
         }
         if (input.contains("+") == true){
             String num1 = input.substring(0,input.lastIndexOf("+"));
             String num2 = input.substring((input.lastIndexOf("+") + 1), input.length());
             if (arabNum.containsKey(num1) && romNum.containsKey(num2) || romNum.containsKey(num1) && arabNum.containsKey(num2)){
-                throw new Exception("throws Exception //т.к. используются одновременно разные системы счисления");
+                throw new Exception("throws Exception //т.к. используются одновременно разные системы счисления1");
             }
             if (arabNum.containsKey(num1) && arabNum.containsKey(num2)){
                int num1I = Integer.parseInt(num1);
