@@ -5,12 +5,12 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
         String expressions = scanner.nextLine();
         calc(expressions);
     }
-    public static String calc(String input){
+    public static String calc(String input) throws Exception{
         HashMap<String, Integer> arabNum = new HashMap<>();
         HashMap<String, Integer> romNum = new HashMap<>();
         arabNum.put("0", 0);
@@ -47,28 +47,28 @@ public class Main {
         int mulOperation1 = input.indexOf("*");
         int mulOperation2 = input.lastIndexOf("*");
         if (addOperation1 == subOperation1|| addOperation1 == divOperation1|| addOperation1 == mulOperation1){
-            System.out.println("throws Exception //т.к. строка не является математической операцией");
+            throw new Exception("throws Exception //т.к. строка не является математической операцией");
         }
         if (addOperation1 != addOperation2 || subOperation1 != subOperation2 || divOperation1 != divOperation2 || mulOperation1 != mulOperation2){
-            System.out.println("throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
+            throw new Exception("throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
         }
         if (addOperation1 == addOperation2 && subOperation1 > 0 || divOperation1 > 0 || mulOperation1 > 0){
-            System.out.println("throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
+            throw new Exception("throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
         }
         if (subOperation1 == subOperation2 && addOperation1 > 0 || divOperation1 > 0 || mulOperation1 > 0){
-            System.out.println("throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
+            throw new Exception("throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
         }
         if (divOperation1 == divOperation2 && addOperation1 > 0 || subOperation1 > 0 || mulOperation1 > 0){
-            System.out.println("throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
+            throw new Exception("throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
         }
         if (mulOperation1 == mulOperation2 && addOperation1 > 0 || subOperation1 > 0 || divOperation1 > 0){
-            System.out.println("throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
+            throw new Exception("throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
         }
         if (input.contains("+") == true){
             String num1 = input.substring(0,input.lastIndexOf("+"));
             String num2 = input.substring((input.lastIndexOf("+") + 1), input.length());
             if (arabNum.containsKey(num1) && romNum.containsKey(num2) || romNum.containsKey(num1) && arabNum.containsKey(num2)){
-                System.out.println("throws Exception //т.к. используются одновременно разные системы счисления");
+                throw new Exception("throws Exception //т.к. используются одновременно разные системы счисления");
             }
             if (arabNum.containsKey(num1) && arabNum.containsKey(num2)){
                int num1I = Integer.parseInt(num1);
@@ -85,7 +85,7 @@ public class Main {
             String num1 = input.substring(0,input.lastIndexOf("-"));
             String num2 = input.substring((input.lastIndexOf("-") + 1), input.length());
             if (arabNum.containsKey(num1) && romNum.containsKey(num2) || romNum.containsKey(num1) && arabNum.containsKey(num2)){
-                System.out.println("throws Exception //т.к. используются одновременно разные системы счисления");
+                throw new Exception("throws Exception //т.к. используются одновременно разные системы счисления");
             }
             if (arabNum.containsKey(num1) && arabNum.containsKey(num2)){
                 int num1I = Integer.parseInt(num1);
@@ -96,7 +96,7 @@ public class Main {
                 int num1I = romNum.get(num1);
                 int num2I = romNum.get(num2);
                 if (num2I>num1I){
-                    System.out.println("throws Exception //т.к. в римской системе нет отрицательных чисел");
+                    throw new Exception("throws Exception //т.к. в римской системе нет отрицательных чисел");
                 }
                 else {
                     System.out.println(convertNumToRoman(num1I - num2I));
@@ -107,13 +107,13 @@ public class Main {
             String num1 = input.substring(0,input.lastIndexOf("/"));
             String num2 = input.substring((input.lastIndexOf("/") + 1), input.length());
             if (arabNum.containsKey(num1) && romNum.containsKey(num2) || romNum.containsKey(num1) && arabNum.containsKey(num2)){
-                System.out.println("throws Exception //т.к. используются одновременно разные системы счисления");
+                throw new Exception("throws Exception //т.к. используются одновременно разные системы счисления");
             }
             if (arabNum.containsKey(num1) && arabNum.containsKey(num2)){
                 int num1I = Integer.parseInt(num1);
                 int num2I = Integer.parseInt(num2);
                 if (num2I == 0){
-                    System.out.println("throws Exception //т.к. на ноль делить нельзя");
+                    throw new Exception("throws Exception //т.к. на ноль делить нельзя");
                 }
                 else {
                     System.out.println((num1I / num2I));
@@ -123,7 +123,7 @@ public class Main {
                 int num1I = romNum.get(num1);
                 int num2I = romNum.get(num2);
                 if (num2I == 0){
-                    System.out.println("throws Exception //т.к. на ноль делить нельзя");
+                    throw new Exception("throws Exception //т.к. на ноль делить нельзя");
                 }
                 else {
                     System.out.println(convertNumToRoman(num1I / num2I));
@@ -135,7 +135,7 @@ public class Main {
             String num1 = input.substring(0,input.lastIndexOf("*"));
             String num2 = input.substring((input.lastIndexOf("*") + 1), input.length());
             if (arabNum.containsKey(num1) && romNum.containsKey(num2) || romNum.containsKey(num1) && arabNum.containsKey(num2)){
-                System.out.println("throws Exception //т.к. используются одновременно разные системы счисления");
+                throw new Exception("throws Exception //т.к. используются одновременно разные системы счисления");
             }
             if (arabNum.containsKey(num1) && arabNum.containsKey(num2)){
                 int num1I = Integer.parseInt(num1);
@@ -146,7 +146,7 @@ public class Main {
                 int num1I = romNum.get(num1);
                 int num2I = romNum.get(num2);
                 if (num1I < 0 || num2I < 0){
-                    System.out.println("throws Exception //т.к. в римской системе нет отрицательных чисел");
+                    throw new Exception("throws Exception //т.к. в римской системе нет отрицательных чисел");
                 }
                 else {
                     System.out.println(convertNumToRoman(num1I * num2I));
