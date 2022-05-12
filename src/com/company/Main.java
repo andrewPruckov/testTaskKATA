@@ -46,14 +46,6 @@ public class Main {
         int divOperation2 = input.lastIndexOf("/");
         int mulOperation1 = input.indexOf("*");
         int mulOperation2 = input.lastIndexOf("*");
-        System.out.println(addOperation1);
-        System.out.println(addOperation2);
-        System.out.println(subOperation1);
-        System.out.println(subOperation2);
-        System.out.println(divOperation1);
-        System.out.println(divOperation2);
-        System.out.println(mulOperation1);
-        System.out.println(mulOperation2);
         if (addOperation1 == -1 && subOperation1 == -1 && divOperation1 == -1 && mulOperation1 == -1){
             throw new Exception("throws Exception //т.к. строка не является математической операцией1");
         }
