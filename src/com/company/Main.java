@@ -86,7 +86,7 @@ public class Main {
                     System.out.println(convertNumToRoman(num1I + num2I));
 
             }
-            if (romNum.containsValue(num1) == false || romNum.containsValue(num2) == false){
+            else {
                 throw new Exception("throws Exception //т.к. значение не входит в одз");
             }
         }
@@ -117,7 +117,7 @@ public class Main {
                     System.out.println(convertNumToRoman(num1I - num2I));
                 }
             }
-            if (romNum.containsValue(num1) == false || romNum.containsValue(num2) == false){
+            else {
                 throw new Exception("throws Exception //т.к. значение не входит в одз");
             }
         }
@@ -149,7 +149,7 @@ public class Main {
                     System.out.println(convertNumToRoman(num1I / num2I));
                 }
             }
-            if (romNum.containsValue(num1) == false || romNum.containsValue(num2) == false){
+            else {
                 throw new Exception("throws Exception //т.к. значение не входит в одз");
             }
         }
@@ -179,7 +179,7 @@ public class Main {
                     System.out.println(convertNumToRoman(num1I * num2I));
                 }
             }
-            if (romNum.containsValue(num1) == false || romNum.containsValue(num2) == false){
+            else {
                 throw new Exception("throws Exception //т.к. значение не входит в одз");
             }
         }
