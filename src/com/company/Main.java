@@ -70,7 +70,7 @@ public class Main {
             if (arabNum.containsKey(num1) && romNum.containsKey(num2) || romNum.containsKey(num1) && arabNum.containsKey(num2)){
                 throw new Exception("throws Exception //т.к. используются одновременно разные системы счисления1");
             }
-            if (arabNum.containsKey(num1) && arabNum.containsKey(num2)){
+            else if (arabNum.containsKey(num1) && arabNum.containsKey(num2)){
                int num1I = Integer.parseInt(num1);
                int num2I = Integer.parseInt(num2);
                if (num1I < 0 || num2I < 0 || num1I > 10 || num2I > 10){
@@ -80,14 +80,14 @@ public class Main {
                    System.out.println(num1I + num2I);
                }
             }
-            if (romNum.containsKey(num1) && romNum.containsKey(num2)){
+            else if (romNum.containsKey(num1) && romNum.containsKey(num2)){
                     int num1I = romNum.get(num1);
                     int num2I = romNum.get(num2);
                     System.out.println(convertNumToRoman(num1I + num2I));
 
             }
             else {
-                throw new Exception("throws Exception //т.к. значение не входит в одз");
+                throw new Exception("throws Exception //т.к. значение не входит в одз1");
             }
         }
         if (input.contains("-") == true){
@@ -96,7 +96,7 @@ public class Main {
             if (arabNum.containsKey(num1) && romNum.containsKey(num2) || romNum.containsKey(num1) && arabNum.containsKey(num2)){
                 throw new Exception("throws Exception //т.к. используются одновременно разные системы счисления");
             }
-            if (arabNum.containsKey(num1) && arabNum.containsKey(num2)){
+            else if (arabNum.containsKey(num1) && arabNum.containsKey(num2)){
                 int num1I = Integer.parseInt(num1);
                 int num2I = Integer.parseInt(num2);
                 if (num1I < 0 || num2I < 0 || num1I > 10 || num2I > 10){
@@ -106,7 +106,7 @@ public class Main {
                     System.out.println(num1I - num2I);
                 }
             }
-            if (romNum.containsKey(num1) && romNum.containsKey(num2)){
+           else if (romNum.containsKey(num1) && romNum.containsKey(num2)){
                 int num1I = romNum.get(num1);
                 int num2I = romNum.get(num2);
                 if (num2I > num1I) {
@@ -118,7 +118,7 @@ public class Main {
                 }
             }
             else {
-                throw new Exception("throws Exception //т.к. значение не входит в одз");
+                throw new Exception("throws Exception //т.к. значение не входит в одз2");
             }
         }
         if (input.contains("/") == true){
@@ -127,7 +127,7 @@ public class Main {
             if (arabNum.containsKey(num1) && romNum.containsKey(num2) || romNum.containsKey(num1) && arabNum.containsKey(num2)){
                 throw new Exception("throws Exception //т.к. используются одновременно разные системы счисления");
             }
-            if (arabNum.containsKey(num1) && arabNum.containsKey(num2)){
+            else if (arabNum.containsKey(num1) && arabNum.containsKey(num2)){
                 int num1I = Integer.parseInt(num1);
                 int num2I = Integer.parseInt(num2);
                 if (num2I == 0){
@@ -140,7 +140,7 @@ public class Main {
                     System.out.println((num1I / num2I));
                 }
             }
-            if (romNum.containsKey(num1) && romNum.containsKey(num2)){
+            else if (romNum.containsKey(num1) && romNum.containsKey(num2)){
                 int num1I = romNum.get(num1);
                 int num2I = romNum.get(num2);
                 if (num2I == 0) {
@@ -150,7 +150,7 @@ public class Main {
                 }
             }
             else {
-                throw new Exception("throws Exception //т.к. значение не входит в одз");
+                throw new Exception("throws Exception //т.к. значение не входит в одз3");
             }
         }
         if (input.contains("*") == true){
@@ -159,7 +159,7 @@ public class Main {
             if (arabNum.containsKey(num1) && romNum.containsKey(num2) || romNum.containsKey(num1) && arabNum.containsKey(num2)){
                 throw new Exception("throws Exception //т.к. используются одновременно разные системы счисления");
             }
-            if (arabNum.containsKey(num1) && arabNum.containsKey(num2)){
+            else if (arabNum.containsKey(num1) && arabNum.containsKey(num2)){
                 int num1I = Integer.parseInt(num1);
                 int num2I = Integer.parseInt(num2);
                 if (num1I < 0 || num2I < 0 || num1I > 10 || num2I > 10){
@@ -169,7 +169,7 @@ public class Main {
                     System.out.println(num1I * num2I);
                 }
             }
-            if (romNum.containsKey(num1) && romNum.containsKey(num2)){
+             else if (romNum.containsKey(num1) && romNum.containsKey(num2)){
                 int num1I = romNum.get(num1);
                 int num2I = romNum.get(num2);
                 if (num1I < 0 || num2I < 0) {
@@ -180,7 +180,7 @@ public class Main {
                 }
             }
             else {
-                throw new Exception("throws Exception //т.к. значение не входит в одз");
+                throw new Exception("throws Exception //т.к. значение не входит в одз4");
             }
         }
         return null;
